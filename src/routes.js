@@ -21,9 +21,6 @@ services.map(service => {
       const method = req.method.toLowerCase()
       const headers = req.headers
       const data = req.body
-
-      console.log(url)
-
   
       axios({
         url,
