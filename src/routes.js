@@ -2,7 +2,7 @@ const { Router } = require('express')
 const axios = require('axios')
 const router = Router()
 
-const services = require('./services')
+const services = require('./services.map')
 
 const getUrlFromService = service => {
   const { host, port, https } = service
