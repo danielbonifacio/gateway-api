@@ -1,0 +1,19 @@
+{
+  "name": "gateway-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agapeconsultoria/gateway-api.git"
+  },
+  "author": "danielbonifacio@outlook.com",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/agapeconsultoria/gateway-api/issues"
+  },
+  "homepage": "https://github.com/agapeconsultoria/gateway-api#readme"
+}
