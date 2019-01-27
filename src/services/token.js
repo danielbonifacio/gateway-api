@@ -5,7 +5,7 @@ const config = require('../config')
 // secret token
 const secret = config.auth.secret
 
-function create (user) {
+function create(user) {
   const payload = {
     sub: user.id,
     iat: moment().unix(),
@@ -15,7 +15,7 @@ function create (user) {
   return jwt.encode(payload, secret)
 }
 
-function decode (token) {
+function decode(token) {
   return new Promise((resolve, reject) => {
     try {
       const payload = jwt.decode(token, secret)
@@ -37,6 +37,6 @@ function decode (token) {
 }
 
 module.exports = {
-    decode,
-    create
+  decode,
+  create
 }

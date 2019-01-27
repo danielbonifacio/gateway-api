@@ -37,6 +37,4 @@ services.map(service => {
     })
 })
 
-
-
 module.exports = router
