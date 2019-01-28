@@ -21,7 +21,6 @@ module.exports = (req, res, next) => {
 
   Token.decode(token)
     .then(response => {
-      console.log(response)
       req.user = response;
       next()
     })
