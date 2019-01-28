@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js -e js,json"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "jwt-simple": "^0.5.5",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "nodemon": "^1.18.9"
   }
 }
