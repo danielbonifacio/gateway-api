@@ -31,8 +31,13 @@ services.map(service => {
         .then(({ data }) => {
           res.status(200).send(data)
         })
-        .catch(({ response }) => {
-          res.status(response.status).send(response.data)
+        .catch(err => {
+          if (err.response) {
+            const { response } = err
+            res.status(response.status).send(response.data)
+          } else {
+            res.status(500).send({ message: 'Houve um erro ao se comunicar com a API' })
+          }
         })
     })
 })
