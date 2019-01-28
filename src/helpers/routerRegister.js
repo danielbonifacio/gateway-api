@@ -1,5 +1,6 @@
 const http = require('axios')
 const { request } = require('./log')
+const auth = require('../middlewares/auth')
 
 /**
  * Recupera a URL do serviço
@@ -18,7 +19,7 @@ const register = (services, router) => {
   services.map(service => {
     const serviceUrl = getUrlFromService(service)
     
-    router.all(`/${service.name}`, async function (req, res) {
+    router.all(`/${service.name}`, auth, async function (req, res) {
       
       const url = serviceUrl + req.originalUrl
       const method = req.method.toLowerCase()

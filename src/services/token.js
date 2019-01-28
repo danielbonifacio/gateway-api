@@ -25,7 +25,7 @@ function decode(token) {
           status: 401,
           message: 'Token expirado.'
         })
-        : resolve(payload.sub)
+        : resolve(payload)
 
     } catch (err) {
       reject({
