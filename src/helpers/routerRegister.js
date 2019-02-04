@@ -28,8 +28,6 @@ const register = (services, router) => {
       const headers = req.headers
       const data = req.body
 
-      console.log(url)
-
       // status que será feito o log
       let status = 200
 
@@ -64,7 +62,7 @@ const register = (services, router) => {
        * TODO: Deixar essa opção parametrizável
        */
       const log = request(req, service, status)
-      // console.log(log)
+      console.log(log)
     })
   })
 }
