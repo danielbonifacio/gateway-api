@@ -3,6 +3,14 @@ const Token = require('../services/token')
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization
 
+  /**
+   * Caso seja a rota de autenticação
+   */
+  const { originalUrl } = req
+  if (/\/auth/gi.test(originalUrl)) {
+    return next()
+  }
+
   if (!authHeader)
     return res
       .status(401)
