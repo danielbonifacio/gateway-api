@@ -5,7 +5,6 @@ const services = [
     host: '127.0.0.1',
     port: '3333',
     https: false,
-    public: true,
   },
   {
     name: 'Tweets',
@@ -20,7 +19,6 @@ const services = [
     host: '127.0.0.1',
     port: '3333',
     https: false,
-    public: true,    
   }
 ]
 
