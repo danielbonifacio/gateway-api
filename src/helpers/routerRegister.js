@@ -6,7 +6,7 @@ const auth = require('../middlewares/auth')
  * Recupera a URL do serviço
  * @param {object} service Serviço
  */
-const getUrlFromService = ({ host, port, https }) => `${https ? 'https' : 'http'}://${host}${port ? `:${port}` : ''}`
+const getUrlFromService = ({ host, port, https, prefix }) => `${https ? 'https' : 'http'}://${host}${port ? `:${port}` : ''}`
 
 /**
  * Registra todas as rotas.
@@ -19,12 +19,16 @@ const register = (services, router) => {
   services.map(service => {
     const serviceUrl = getUrlFromService(service)
     
-    router.all(`/${service.name}`, auth, async function (req, res) {
+    router.all(`/${service.prefix ? `${service.prefix}` : ''}*`, auth, async function (req, res) {
+      const { originalUrl } = req
       
-      const url = serviceUrl + req.originalUrl
+      const url = serviceUrl + originalUrl.replace(`/${service.prefix}`, '')
+      
       const method = req.method.toLowerCase()
       const headers = req.headers
       const data = req.body
+
+      console.log(url)
 
       // status que será feito o log
       let status = 200
@@ -60,7 +64,7 @@ const register = (services, router) => {
        * TODO: Deixar essa opção parametrizável
        */
       const log = request(req, service, status)
-      console.log(log)
+      // console.log(log)
     })
   })
 }

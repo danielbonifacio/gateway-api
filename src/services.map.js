@@ -1,17 +1,26 @@
 const services = [
   {
-    name: 'users',
+    name: 'Users',
+    prefix: 'users',
     host: '127.0.0.1',
     port: '3333',
     https: false,
     public: true,
   },
   {
-    name: 'tweets',
+    name: 'Tweets',
+    prefix: 'tweets',
     host: '127.0.0.1',
     port: '3333',
     https: false,
-    public: true,
+  },
+  {
+    name: 'Authentication',
+    prefix: 'auth',
+    host: '127.0.0.1',
+    port: '3333',
+    https: false,
+    public: true,    
   }
 ]
 
