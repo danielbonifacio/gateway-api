@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
    * Caso seja a rota de autenticação
    */
   const { originalUrl } = req
-  if (/\/auth/gi.test(originalUrl)) {
+  if (/\/(auth|autenticar|autenticacao)/gi.test(originalUrl)) {
     return next()
   }
 
