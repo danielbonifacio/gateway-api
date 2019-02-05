@@ -1,9 +1,9 @@
 const services = [
   {
-    name: 'Users',
-    prefix: 'users',
+    name: 'Posts',
+    prefix: 'posts',
     host: '127.0.0.1',
-    port: '3333',
+    port: '4567',
     https: false,
   },
   {
@@ -14,12 +14,12 @@ const services = [
     https: false,
   },
   {
-    name: 'Authentication',
-    prefix: 'auth',
+    name: 'User ACL',
+    prefix: 'autenticacao',
     host: '127.0.0.1',
-    port: '3333',
+    port: '9999',
     https: false,
-  }
+  },
 ]
 
 module.exports = services
