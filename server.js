@@ -1,10 +1,15 @@
 require('dotenv').config()
 
+const { lang } = require('./src/config')
+const say = require('./src/helpers/say')
 const app = require('./src/app')
 
 console.clear()
-app.listen(proccess.env.PORT || 4000, (err) =>
+
+const port = process.env.PORT || 4000
+
+app.listen(port, (err) =>
     err
-        ? console.log('erro')
-        : console.log('API iniciada')
+        ? say(lang.server.error, { error: err.message })
+        : say(lang.server.started, { port })
 )
