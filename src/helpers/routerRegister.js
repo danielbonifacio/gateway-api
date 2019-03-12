@@ -1,6 +1,6 @@
 const http = require('axios')
 const { request } = require('./log')
-const { lang } = require('../config')
+const lang = require('../lang')
 const auth = require('../middlewares/auth')
 const say = require('../helpers/say')
 

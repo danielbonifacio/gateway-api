@@ -1,7 +1,7 @@
 const jwt = require('jwt-simple')
 const moment = require('moment')
 const config = require('../config')
-const { lang } = config
+const lang = require('../lang')
 
 const secret = config.auth.secret
 

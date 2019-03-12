@@ -1,0 +1,15 @@
+{
+  "server": {
+    "started": "Gateway API started. Running on port ${port}.",
+    "failOnStart": "Error during Gateway API start: ${error}"
+  },
+  "token": {
+    "notProvided": "Please, provide a Token.",
+    "malformatted": "The given token was not correctly formatted.",
+    "expired": "Expired token.",
+    "invalid": "Invalid token."
+  },
+  "service": {
+    "unavailable": "The Gateway API can't reach the service ${name}"
+  }
+}

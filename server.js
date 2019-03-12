@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const { lang } = require('./src/config')
+const lang = require('./src/lang')
 const say = require('./src/helpers/say')
 const app = require('./src/app')
 

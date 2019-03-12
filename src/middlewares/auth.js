@@ -1,5 +1,5 @@
 const Token = require('../services/token')
-const { lang } = require('../config')
+const lang = require('../lang')
 
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization
