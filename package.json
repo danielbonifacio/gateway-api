@@ -23,7 +23,9 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "jwt-simple": "^0.5.5",
-    "moment": "^2.24.0",
-    "nodemon": "^1.18.9"
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
