@@ -1,6 +1,15 @@
 {
   "server": {
-    "started": "API iniciada na porta ${port}",
+    "started": "API iniciada na porta ${port}.",
     "failOnStart": "Erro ao iniciar api: ${error}"
+  },
+  "token": {
+    "notProvided": "Providencie um token.",
+    "malformatted": "Token não formatado corretamente.",
+    "expired": "Token expirado.",
+    "invalid": "Token inválido."
+  },
+  "service": {
+    "unavailable": "Não foi possível se conectar ao serviço ${name}"
   }
 }

@@ -1,6 +1,8 @@
 const http = require('axios')
 const { request } = require('./log')
+const { lang } = require('../config')
 const auth = require('../middlewares/auth')
+const say = require('../helpers/say')
 
 /**
  * Recupera a URL do serviço
@@ -53,7 +55,7 @@ const register = (services, router) => {
             status = 500
             res
               .status(status)
-              .send({ message: `Não foi possível se conectar ao serviço ${service.name}` })
+              .send({ message: say(lang.service.unavailable, { name: service.name }) })
           }
         })
 

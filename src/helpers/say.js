@@ -8,7 +8,7 @@
  */
 const say = (ref, params, log = true) => {
   let str = ref
-  Object.keys(params).forEach(param => {
+  params && Object.keys(params).forEach(param => {
     const regex = new RegExp('\\$\\{'+param+'\\}', 'gi')
     str = str.replace(regex, params[param])
   });

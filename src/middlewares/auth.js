@@ -1,30 +1,28 @@
 const Token = require('../services/token')
+const { lang } = require('../config')
 
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization
 
-  /**
-   * Caso seja a rota de autenticação
-   */
+  // if authentication service, bypass the middleware
   const { originalUrl } = req
-  if (/\/(auth|autenticar|autenticacao)/gi.test(originalUrl)) {
+  if (/^\/auth/gi.test(originalUrl)) {
     return next()
   }
 
   if (!authHeader)
     return res
       .status(401)
-      .send({ message: 'Providencie um token.' })
+      .send({ message: lang.token.notProvided })
 
-  // Separa a string do header
+  // bearer token verification
   const parts = authHeader.split(' ')
   const [scheme, token] = parts
 
-  // Caso o Header não seja formatado da maneira correta
   if (!parts.length === 2 || !/^Bearer$/i.test(scheme))
     return res
       .status(401)
-      .send({ message: 'Token inválido.' })
+      .send({ message: lang.token.malformatted })
 
 
   Token.decode(token)

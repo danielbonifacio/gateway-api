@@ -1,11 +1,11 @@
 const jwt = require('jwt-simple')
 const moment = require('moment')
 const config = require('../config')
+const { lang } = config
 
-// secret token
 const secret = config.auth.secret
 
-function create(user) {
+const create = user => {
   const payload = {
     sub: user.id,
     iat: moment().unix(),
@@ -15,7 +15,7 @@ function create(user) {
   return jwt.encode(payload, secret)
 }
 
-function decode(token) {
+const decode = token => {
   return new Promise((resolve, reject) => {
     try {
       const payload = jwt.decode(token, secret)
@@ -23,14 +23,14 @@ function decode(token) {
       payload.exp <= moment.unix()
         ? reject({
           status: 401,
-          message: 'Token expirado.'
+          message: lang.token.expired
         })
         : resolve(payload)
 
     } catch (err) {
       reject({
         status: 500,
-        message: 'Token inválido.'
+        message: lang.token.invalid
       })
     }
   })
