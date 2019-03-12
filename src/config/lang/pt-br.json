@@ -1,0 +1,6 @@
+{
+  "server": {
+    "started": "API iniciada na porta ${port}",
+    "failOnStart": "Erro ao iniciar api: ${error}"
+  }
+}
