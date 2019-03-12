@@ -9,6 +9,7 @@ Free Node.js Gateway API model.
 ``` env
 SECRET=YOUR_SECRET_TOKEN
 PORT=80
+LANG=en-us
 ```
 
 ## Services Mapping
@@ -74,6 +75,16 @@ By default, all requests needs to pass on the Auth method.
 You cannot get out of it. So if you need "token free" public link, make sure you've been added a condition in `middlewares/auth.js`.
 
 If you want to add another middleware, you can do it in `helpers/routerRegister.js` file.
+
+## Translations
+
+By default, the Gateway sets `en-us` as default language. You can change it overwritting the `process.env.API_LANG` to the JSON translation file that you want.
+
+Current available translations:
+- `en-us`
+- `pt-br`
+
+Help us make the Gateway API global: write a translation and [make a pull request](https://github.com/danielbonifacio/gateway-api/pulls).
 
 ## Packages and Credits
 
